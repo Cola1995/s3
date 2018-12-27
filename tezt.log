@@ -1,0 +1,5 @@
+Mon, 24 Dec 2018 16:34:58 loggin.py[line:9] DEBUG debug message
+Mon, 24 Dec 2018 16:34:58 loggin.py[line:10] INFO info message
+Mon, 24 Dec 2018 16:34:58 loggin.py[line:11] WARNING warning message
+Mon, 24 Dec 2018 16:34:58 loggin.py[line:12] ERROR error message
+Mon, 24 Dec 2018 16:34:58 loggin.py[line:13] CRITICAL critical message
