@@ -21,6 +21,7 @@ class Tel:
 
 
 t1=Tel("oppo","r9s",2799,2)
+
 #t1.show()
 # print(t1.buy)     #调用时不要加括号
 Tel.tt(2)
