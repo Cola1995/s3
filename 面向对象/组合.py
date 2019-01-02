@@ -69,6 +69,7 @@ while True:
     k_in = input("请输入要选择的课程————————》")
 
 
+
     t1 = Teacher('wupeiqi', 10000, 35,men_k[k_in])
     t2 = Teacher("alex",20000,38,men_k[k_in])
 
