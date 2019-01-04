@@ -12,9 +12,9 @@ class Open:
     def __getattr__(self, item):
         return getattr(self.file,item)
 
-f=Open('a.txt','w+')
+f=Open('a.txt','a+')
 f.write('111111\n')
 f.write('cpu使用率过高\n')
 f.write('内存过高\n')
-f.seek(0)
+f.seek(1)
 print(f.read())

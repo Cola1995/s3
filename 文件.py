@@ -38,5 +38,9 @@ f=open('a.py','rb') #读取文件内容 b的方式不能制定编码
 # print(data)
 with open('user_list.txt','r') as read_f:
     for i in read_f:
-        print(i.strip())
+        #print(i.strip())
+        dc=eval(i)
+        print(dc['name'],dc['passwd'])
 
+
+    # print(read_f.readlines()) #得到的结果是列表
