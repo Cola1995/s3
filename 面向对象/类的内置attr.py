@@ -3,13 +3,13 @@ class Foo:
     def __init__(self,y):
         self.y=y
 
-    def __getattr__(self, item):  #先查找实例属性
+    def __getattr__(self, item):  #先查找实例属性，只有obj.属性不存在时触发
         print('查找的%s属性不存在'%item)
 
-    def __delattr__(self, item):
+    def __delattr__(self, item): #删除属性时触发
         self.__dict__.pop(item)
 
-    def __setattr__(self, key, value):
+    def __setattr__(self, key, value):  #设置属性值时触发
         print('—setattr--')
         self.__dict__[key]=value
 

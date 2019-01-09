@@ -23,6 +23,7 @@ print(t.format(name,age,sex))
 tag=','
 str_tag=tag.join(text1)
 print(str_tag)
+
 list_tag=list(str_tag) #字符串转列表
 s=str(list_tag)
 print(s,type(s))
