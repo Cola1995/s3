@@ -1,9 +1,15 @@
-st='ss'
-s1='ss2'
-print(type(st))
-print(type(s1))
-if type(st) is not type(s1):
-    print('ok')
+class people:
 
-else:
-    print('sb')
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+
+    def ded(self):
+        del self.name
+
+
+
+p1=people('ma',24)
+print(p1.__dict__)
+p1.ded()
+print(p1.__dict__)
