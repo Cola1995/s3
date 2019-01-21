@@ -17,6 +17,6 @@ while True:
     cmd_tcp_client.send(cmd.encode('utf-8'))
 
     recive=cmd_tcp_client.recv(1024)
-    print(recive.decode('GBK'))
+    print('客服端收到的消息是%s'%recive.decode('GBK'))
 
 

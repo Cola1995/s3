@@ -13,16 +13,24 @@ while True:
     conn,addr=cmd_tcp_server.accept()
 
     while True:
+        try:
+            data=conn.recv(buffer_size)
+            print('服务端收到的消息是%s'%data.decode('utf-8'))
+            if len(data)==0:break
+            res = subprocess.Popen(data.decode('utf-8'),
+                                   shell=True,
+                                   stderr=subprocess.PIPE,
+                                   stdout=subprocess.PIPE)
 
-        data=conn.recv(buffer_size)
-        print(data)
-        if len(data)==0:break
-        res = subprocess.Popen(data.decode('utf-8'),
-                               shell=True,
-                               stderr=subprocess.PIPE,
-                               stdout=subprocess.PIPE)
-
-        conn.send(res.stdout.read())
+            err=res.stderr.read()
+            if err:
+                cmd_res=err
+            else:
+                cmd_res=res.stdout.read()
+            conn.send(cmd_res)
+        except Exception as e:
+            print(e)
+            break
 
 
 
