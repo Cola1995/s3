@@ -1,4 +1,5 @@
 import os
+import time
 p=os.getcwd() #获取当前工作路径
 print(p)
 os.chdir("..") #改变当前路径
@@ -31,3 +32,4 @@ os.environ  #获取系统环境变量
 # os.path.join(path1[, path2[, ...]])  #将多个路径组合后返回，第一个绝对路径之前的参数将被忽略
 # os.path.getatime(path)  #返回path所指向的文件或者目录的最后存取时间
 # os.path.getmtime(path)  #返回path所指向的文件或者目录的最后修改时间
+
