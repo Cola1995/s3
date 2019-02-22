@@ -8,7 +8,7 @@ import time
 print(time.time()) #1544688721.9046378秒  从1970凌晨到现在多少秒
 
 
-#结构化时间，当地时间
+#结构化时间，当地时间,时间戳转化为结构化时间
 t=time.localtime(1412545454)
 s='{0}:{1}:{2}:{3}'
 ss=s.format(t.tm_year,t.tm_mon,t.tm_mday,t.tm_hour)

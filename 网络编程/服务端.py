@@ -7,9 +7,9 @@ buff_size=1024
 tcp_server=socket(AF_INET,SOCK_STREAM)
 tcp_server.bind(ip_port)    #设置ip端口号
 tcp_server.listen(back_log)
-while True:
+while True:  #循环接受链接
     conn,addr=tcp_server.accept()  #等待连接
-    while True:
+    while True:   #循环接受消息
         try:
             msg=conn.recv(buff_size)   #服务端接受消息
         except Exception:
