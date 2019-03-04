@@ -11,7 +11,8 @@
 #
 # print(ste[1:-1])
 import re
-import pl
+from 基础练习 import pl
+
 suan='1+(9+3*1-4+(4+(2+1))+(1-2))+(2*4)'
 suan1='1+2'
 f = re.search('\([^()]*\)', suan).group()
@@ -28,7 +29,7 @@ def kk(ss):
     while True:
         for i in range(len(f)):
             rr=re.findall('([\d\.]+|/|-|\+|\*)', f[i])
-            sum=pl.all(rr)
+            sum= pl.all(rr)
             ss=ss.replace(f[i],str(sum))
 
         if '(' in ss:
