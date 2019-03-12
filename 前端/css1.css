@@ -1,0 +1,11 @@
+/*div span{*/
+    /*color: blue;*/
+/*}*/
+
+div{ height: 100px;width: 800px; border: 1px blue solid;}
+div>span{
+    color: red;
+}
+div+span{
+    color: yellow;
+}

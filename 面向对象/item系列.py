@@ -14,7 +14,7 @@ class Foo:
 f=Foo()
 
 f['name']="ma"
-# print(f.__dict__)
+print(f.__dict__)
 print(f['name'])
 del f['name']
 print(f.__dict__)

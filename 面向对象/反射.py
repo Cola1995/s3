@@ -11,7 +11,7 @@ class seller:
 
 s1=seller('链家','天龙苑')
 
-print(getattr(s1,'sell_house1','ok')) #获取属性值,不存在则报错，如果存在默认值，返回默认值
+print(getattr(s1,'sell_house1','ok1')) #获取属性值,不存在则报错，如果存在默认值，返回默认值
 
 print(hasattr(s1,'pre'))  #判断s1.属性是否存在，返回bool值
 # print(s1.__dict__)

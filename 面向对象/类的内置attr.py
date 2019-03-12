@@ -14,9 +14,12 @@ class Foo:
         self.__dict__[key]=value
 
 
-
+    def play1(self):
+        print("这是play放法")
 f=Foo(10)
-print(f.r)
+print(getattr(f,"play11","pk"))
+# print(f.play1())
+# print(f.r)
 # print(f.__dict__)
 # f.q=12
 # print(f.__dict__)
