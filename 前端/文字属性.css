@@ -1,0 +1,11 @@
+body {
+  font-family: "Microsoft Yahei", "微软雅黑", "Arial", sans-serif
+}
+
+p{
+    font-weight: bold;
+    color: red;
+    /*text-align: center;*/
+    text-decoration: underline yellow;
+    /*text-indent: 32px;*/
+}
