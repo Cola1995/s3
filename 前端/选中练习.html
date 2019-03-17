@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0
+        }
+
+        .cover {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 999;
+        }
+
+        .shu {
+            position: absolute;
+            height: 300px;
+            width: 500px;
+            background-color: white;
+            margin-top: 50%;
+            margin-left: 50%;
+            top: -500px;
+            left: -250px;
+            z-index: 1000;
+        }
+
+        .d-table {
+            position: absolute;
+
+        }
+
+        .hide {
+            display: none
+        }
+
+    </style>
+</head>
+<body>
+<div class="cover hide"></div>
+<div class="shu hide">
+    <lable>姓名：<input type="text" id="name"></lable>
+    <br>
+    <lable>职业：<input type="text" id="job"></lable>
+    <br><input type="button" id="sub" value="提交"><input type="button" id="back" value="取消"></div>
+<input type="button" id="b1" value="全选">
+<input type="button" id="b2" value="反选">
+<input type="button" id="b3" value="取消">
+<input type="button" id="b4" value="添加记录">
+<table border="sold 1px">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>姓名</th>
+        <th>职业</th>
+        <th>操作</th>
+        <th>状态</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>马宏达</td>
+        <td>测试工程师</td>
+        <td><input type="button" class="edit" id="e0" value="编辑"><input type="button" class="del" value="删除"></td>
+        <td><select>
+            <option value="0">上线</option>
+            <option value="1">下线</option>
+            <option value="2">离线</option>
+        </select></td>
+
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>马宏达</td>
+        <td>测试工程师</td>
+        <td><input type="button" class="edit" id="e1" value="编辑"><input type="button" class="del" value="删除"></td>
+        <td><select name="" id="">
+            <option value="0">上线</option>
+            <option value="1">下线</option>
+            <option value="2">离线</option>
+        </select></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>马宏达</td>
+        <td>测试工程师</td>
+        <td><input type="button" class="edit" id="e2" value="编辑"><input type="button" class="del" value="删除"></td>
+        <td><select name="">
+            <option value="0">上线</option>
+            <option value="1">下线</option>
+            <option value="2">离线</option>
+        </select></td>
+    </tr>
+    </tbody>
+</table>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+    var cEles = $(":checkbox")
+    // var $delEle=$(":checkbox").parent().siblings().last().children()
+    var $delEle = $(".del")
+    //全选按钮
+    $("#b1").click(function () {
+        console.log(cEles)
+        cEles.prop("checked", true)
+
+    });
+
+
+    //取消按钮
+    $("#b3").click(function () {
+
+        cEles.prop("checked", false)
+    });
+    //反选按钮
+    $("#b2").click(function () {
+        for (var i = 0; i < cEles.length; i++) {
+            if ($(cEles[i]).prop("checked") == true) {
+                $(cEles[i]).prop("checked", false)
+            }
+            else
+                $(cEles[i]).prop("checked", true)
+        }
+    });
+    // 删除按钮
+    // $($delEle).on("click",function () {
+    //     // alert('ok')
+    //
+    //     $(this).parent().parent().remove()
+    // });
+    //未来元素添加时间方法
+    $("table").on("click", ".del", function () {
+        // alert('ok')
+
+        $(this).parent().parent().remove()
+    });
+
+
+    //添加记录
+    $("#b4").on("click", function () {
+        var trEle = document.createElement("tr")
+        // trEle.innerText("<td><input type='checkbox'></td><td>金毛狮王</td><td>测试工程师</td><td><input type='button' class='del' value='删除'></td>")
+        trEle.innerHTML = "<td><input type='checkbox'></td><td>金毛狮王</td><td>测试工程师</td><td><input type='button' class='del' value='删除'></td> <td><select><option value=\"\">上线</option><option value=\"\">下线</option><option value=\"\">离线</option></select></td>"
+        // trEle.innerText='aaaa'
+        // alert('ok')
+        $("table").append(trEle)
+
+    });
+
+
+    //批量更改状态
+    //键盘事件
+    var flag = false
+
+
+    $(window).on("keydown", function (e) {
+        if (e.keyCode === 17) {
+            flag = true
+        }
+    });
+
+
+    $(window).on("keyup", function (e) {
+        if (e.keyCode === 17) {
+            flag = false
+        }
+    });
+
+    $("select").on('change', function () {  //对select添加change时间，并且查找当前input是否选中
+        var $cheEle = $(this).parent().siblings().first().find(":checkbox"); //
+        var value = $(this).val()  //记录改变的value
+        // alert(value)
+        if ($cheEle.prop("checked") && flag) {  //如果input选中并且按住CTRl
+            var $chekeds = $("input[type=checkbox]:checked")  //查找所有选中的input
+            for (var i = 0; i < $chekeds.length; i++) {   //循环添加更爱select的value
+                $($chekeds[i]).parent().siblings().last().find("select").val(value);
+            }
+
+
+        }
+
+    });
+
+    //    $("table").on('change','select',function () {  //对select添加change时间，并且查找当前input是否选中
+    //     var $cheEle=$(this).parent().siblings().first().find(":checkbox"); //
+    //     var value=$(this).val()  //记录改变的value
+    //     // alert(value)
+    //     if ($cheEle.prop("checked") && flag){  //如果input选中并且按住CTRl
+    //         var $chekeds=$("input[type=checkbox]:checked")  //查找所有选中的input
+    //         for(var i=0;i<$chekeds.length;i++){   //循环添加更爱select的value
+    //             $($chekeds[i]).parent().siblings().last().find("select").val(value);
+    //         }
+    //
+    //
+    //     }
+    //
+    // });
+    //编辑
+    //点击编辑按钮弹出模态框
+    var data_old=""
+    var data_id=""
+    $(".edit").on("click",function () {
+        var $trEle=$(this).parent().parent(); //获取当前行数据
+        // console.log($trEle)
+        $(this).data("tr",$trEle)   //将数据存入data
+        // alert(this.id)
+        $(this).data("id",this.id)
+        data_tr=$(this).data("tr")
+        data_id=$(this).data("id")
+        // console.log(data)
+        $(".cover").removeClass("hide");
+        $(".shu").removeClass("hide");
+
+
+         $("#name").val(data_tr.children().first().next().text())
+        $("#job").val(data_tr.children().first().next().next().text())
+    });
+
+    //返回按钮
+    $("#back").on("click",function () {
+        $(".cover").addClass("hide");
+        $(".shu").addClass("hide");
+    })
+
+    //提交按钮
+    $("#sub").on("click",function () {
+
+        var i_name=$("#name").val().trim()
+        var i_job=$("#job").val().trim()
+        // alert(i_name)
+        // alert(i_job)
+        console.log(data_tr.children().first().next().text())//获取之前保存姓名
+        console.log(data_id)
+        var j_id="#"+data_id
+        // console.log(data.children().first().next().next().text())//获取之前保存职业
+        // data_new=data_old;
+        data_tr.children().first().next().text(i_name);
+        data_tr.children().first().next().next().text(i_job);
+
+        $(j_id).parent().parent().replaceWith(data_tr);   //替换tr
+
+        $(".cover").addClass("hide");
+        $(".shu").addClass("hide");
+
+    })
+
+</script>
+</body>
+</html>
