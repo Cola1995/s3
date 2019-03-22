@@ -100,11 +100,12 @@
 </table>
 <script src="jquery-3.2.1.min.js"></script>
 <script>
-    var cEles = $(":checkbox")
+    // var cEles = $(":checkbox")
     // var $delEle=$(":checkbox").parent().siblings().last().children()
     var $delEle = $(".del")
     //全选按钮
     $("#b1").click(function () {
+        var cEles = $(":checkbox")
         console.log(cEles)
         cEles.prop("checked", true)
 
@@ -113,11 +114,12 @@
 
     //取消按钮
     $("#b3").click(function () {
-
+        var cEles = $(":checkbox")
         cEles.prop("checked", false)
     });
     //反选按钮
     $("#b2").click(function () {
+        var cEles = $(":checkbox")
         for (var i = 0; i < cEles.length; i++) {
             if ($(cEles[i]).prop("checked") == true) {
                 $(cEles[i]).prop("checked", false)
@@ -241,7 +243,7 @@
         data_tr.children().first().next().text(i_name);
         data_tr.children().first().next().next().text(i_job);
 
-        $(j_id).parent().parent().replaceWith(data_tr);   //替换tr
+        // $(j_id).parent().parent().replaceWith(data_tr);   //替换tr
 
         $(".cover").addClass("hide");
         $(".shu").addClass("hide");

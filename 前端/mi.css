@@ -5,7 +5,7 @@
     font-family:  "Helvetica Neue";
 
 }
-a{
+ a{
     text-decoration: none;
     color: rgb(176,176,176);
 
@@ -15,7 +15,7 @@ li{
     list-style:none;
 
 }
-a:hover{
+.dh_8 ul li a:hover{
     /*color: rgb(125,125,125);*/
     color: #fff;
 }
@@ -46,4 +46,188 @@ a:hover{
     width: 65%;
     margin: 0 auto;
     /*border: red solid 1px;*/
+}
+/*小图标*/
+/*.t_left_tu{*/
+    /*float: left;*/
+/*}*/
+
+/*小图标后文字*/
+.t_left_tu ul li{
+    float: left;
+    padding: 25px 7px;
+    /*margin-right: 10px;*/
+
+}
+/*导航栏文字*/
+.t_left_tu ul li a{
+    font-size: 16px;
+    color: black;
+}
+.t_left_tu ul li a:hover{
+    color:#ff6700;
+}
+.t_left_tu img{
+    float: left;
+    padding: 15px 0;
+}
+.f1{
+    float: right;
+    padding: 15px 0;
+}
+/*文字div*/
+.t_font{
+    margin-left: 200px;
+}
+.t_left_tu{
+    /*background: green;*/
+}
+.two{
+    width: 65%;
+    margin: 0 auto;
+}
+.in1{
+    width: 245px;
+    height: 50px;
+    /*padding: 5px;*/
+}
+.in2{
+    width: 54px;
+    height: 54px;
+    margin-left: -4px;
+
+}
+/*第三个行中部*/
+.three_center{
+    width: 65%;
+    height: 460px;
+    background: #d04b4e;
+    margin: 0 auto;
+}
+.three_left{
+    width: 20%;
+    height: 100%;
+    background: black;
+    float: left;
+}
+.three_right{
+    width: 80%;
+    height: 100%;
+    background: yellow;
+    float: left;
+}
+
+/*.three_left ul {*/
+    /*width: 20%;*/
+    /*height: 100%;*/
+/*}*/
+.three_left ul li {
+    padding-top: 13px;
+}
+.i_d{
+    height: 46px;
+    width: 100%;
+    background: rgb(96,96,96);
+    color: white;
+    text-align: center;
+
+}
+.i_d:hover{
+    background: #ff6700;
+
+}
+/*第一个div>li 弹出*/
+.first_li{
+    width: 600px;
+    height: 460px;
+    background: #d04b4e;
+    /*display: none;*/
+}
+.first_li_2{
+    width: 500px;
+    height: 460px;
+    background: blue;
+    /*display: none;*/
+}
+.first_li_3{
+    width: 550px;
+    height: 460px;
+    background: black;
+    /*display: none;*/
+}
+.first_li_4{
+    width: 700px;
+    height: 460px;
+    background: black;
+    /*display: none;*/
+}
+.first_li_5{
+    width: 550px;
+    height: 460px;
+    background: black;
+    /*display: none;*/
+}
+.first_li_6{
+    width: 800px;
+    height: 460px;
+    background: slategray;
+    /*display: none;*/
+}
+.first_li_7{
+    width: 550px;
+    height: 460px;
+    background: black;
+    /*display: none;*/
+}
+.first_li_8{
+    width: 550px;
+    height: 460px;
+    background: black;
+    /*display: none;*/
+}
+.first_li_9{
+    width: 550px;
+    height: 460px;
+    background: black;
+    /*display: none;*/
+}
+.first_li_10{
+    width: 550px;
+    height: 460px;
+    background: black;
+    /*display: none;*/
+}
+.four{
+    height:170px;
+    width: 65%;
+    margin: 14px auto;
+    /*background: blueviolet;*/
+}
+.four_tu{
+    width: 20%;
+    height: 100%;
+    background: #576b95;
+    float: left;
+}
+.four_3{
+    width: 25%;
+    height: 100%;
+    background: #d04b4e;
+    float: left;
+    margin: 0 0 0 20.5px;
+}
+.five{
+    width: 65%;
+    height: 120px;
+    background: deepskyblue;
+    margin: 15px auto;
+}
+.phone{
+    width: 100%;
+    height: 700px;
+    background: rgb(245,245,245);
+}
+
+.p_font h1{
+    font-size: 22px;
 }
