@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>菜单效果</title>
+    <style>
+        ul{
+            list-style: none;
+
+        }
+        .hide{
+            display: none;
+
+        }
+    </style>
+</head>
+<body>
+<div class="menu">
+    <div class="menu-item ">
+        <div class="d1" id="0">菜单一</div>
+        <ul class="hide">
+            <li>111</li>
+            <li>222</li>
+            <li>333</li>
+        </ul>
+    </div>
+    <div class="menu-item ">
+        <div class="d1" id="1">菜单二</div>
+        <ul class="hide">
+            <li>111</li>
+            <li>222</li>
+            <li>333</li>
+        </ul>
+    </div>
+    <div class="menu-item" >
+      <div class="d1" id="2">菜单三</div>
+        <ul class="">
+            <li>111</li>
+            <li>222</li>
+            <li>333</li>
+        </ul>
+    </div>
+</div>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+ $(".d1").click(function (){  // jQuery绑定事件
+    // 隐藏所有class里有.items的标签
+    $("ul").addClass("hide");  //批量操作
+    $(this).next().removeClass("hide");
+    // $(this).parent().siblings().find("ul").hide();
+    // $(this).next().show();
+  })
+
+
+
+</script>
+</body>
+</html>

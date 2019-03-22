@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>左侧菜单示例</title>
+  <style>
+    .left {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 20%;
+      height: 100%;
+      background-color: rgb(47, 53, 61);
+    }
+
+    .right {
+      width: 80%;
+      height: 100%;
+    }
+
+    .menu {
+      color: white;
+    }
+
+    .title {
+      text-align: center;
+      padding: 10px 15px;
+      border-bottom: 1px solid #23282e;
+    }
+
+    .items {
+      background-color: #181c20;
+
+    }
+    .item {
+      padding: 5px 10px;
+      border-bottom: 1px solid #23282e;
+    }
+
+    .hide {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="left">
+  <div class="menu">
+    <div class="title">菜单一</div>
+    <div class="items">
+      <div class="item">111</div>
+      <div class="item">222</div>
+      <div class="item">333</div>
+    </div>
+    <div class="title">菜单二</div>
+    <div class="items hide">
+      <div class="item">111</div>
+      <div class="item">222</div>
+      <div class="item">333</div>
+    </div>
+    <div class="title">菜单三</div>
+    <div class="items hide">
+      <div class="item">111</div>
+      <div class="item">222</div>
+      <div class="item">333</div>
+    </div>
+  </div>
+</div>
+<div class="right"></div>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+  $(".title").click(function (){  // jQuery绑定事件
+    // 隐藏所有class里有.items的标签
+    $(".items").addClass("hide");  //批量操作
+    $(this).next().removeClass("hide");
+  });
+</script>
+
+左侧菜单示例
